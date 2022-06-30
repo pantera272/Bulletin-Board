@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="252" height="40" viewBox="0 0 252 40">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 16.391px;
+        fill: #bbb;
+        text-anchor: middle;
+        font-family: Arial;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #bfd5ea;
+        stroke: #bfd5ea;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <text id="Bulletyn_Board" data-name="Bulletyn Board" class="cls-1" transform="translate(125.999 30.39) scale(2.16)"><tspan x="0">Bulletyn Board</tspan></text>
+  <path class="cls-2" d="M109.167,36.87l4-3.9H249.7v3.9H109.167Z"/>
+</svg>
