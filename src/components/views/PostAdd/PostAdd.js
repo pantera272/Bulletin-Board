@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormContainer from '../FormContainer/FormContainer';
 import { useDispatch } from 'react-redux';
-import { addAnnoucment } from '../../../redux/annoucmentsReducer';
+import { addAnnoucmentRequest } from '../../../redux/annoucmentsReducer';
 import { useNavigate } from 'react-router-dom';
 
 // import { connect } from 'react-redux';
@@ -15,7 +15,7 @@ const Component = () => {
   const navigate = useNavigate();
   
   const submitForm = annoucment => {
-    dispatch(addAnnoucment(annoucment));
+    dispatch(addAnnoucmentRequest(annoucment));
     navigate('/');
   };
 

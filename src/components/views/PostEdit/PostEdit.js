@@ -4,19 +4,19 @@ import FormContainer from '../FormContainer/FormContainer';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnnoucmentsById } from '../../../redux/annoucmentsReducer';
-import { editAnnoucment } from '../../../redux/annoucmentsReducer';
+import { updateAnnoucmentRequest } from '../../../redux/annoucmentsReducer';
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
 const Component = () => {
   const  { id } = useParams();
   const annoucment = useSelector(state => getAnnoucmentsById(state, id));
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const editForm = annoucment => {
-    dispatch(editAnnoucment({...annoucment, id}));
+    dispatch(updateAnnoucmentRequest({...annoucment}, id));
     navigate('/');
   };
   

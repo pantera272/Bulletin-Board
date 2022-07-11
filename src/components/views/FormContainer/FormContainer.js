@@ -22,15 +22,14 @@ const FormContainer = ({ action, annoucment, type }) => {
   const user = useSelector(getUser);
 
   useEffect(() => {
-    if (annoucment !== undefined){
+    if (annoucment !== undefined){ 
       setTitle(annoucment.title);
       setText(annoucment.text);
       setStatus(annoucment.status);
       setCreatedDate(annoucment.publicationDate);
     }
-    console.log(annoucment);
-  },[]);
-
+  },[annoucment]);
+    
   const checkTitle = e => {
     const title = e.target.value;
     const length = title.length;

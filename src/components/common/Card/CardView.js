@@ -7,13 +7,13 @@ const CardView = ({ annoucments }) => {
   return (
     <div>
       {annoucments.map(annoucment => 
-        <Card key={annoucment.id} className='mt-5' border='secondary'>
+        <Card key={annoucment._id} className='mt-5' border='secondary'>
           <Card.Header>{annoucment.title}</Card.Header>
           <Card.Body>
             <Card.Text>
               {annoucment.text}
             </Card.Text>
-            <a href={'/post/' + annoucment.id}><Button variant="dark">Show more</Button></a>
+            <a href={'/post/' + annoucment._id}><Button variant="dark">Show more</Button></a>
           </Card.Body>
           <Card.Footer className="text-muted">
             {annoucment.modyficationDate === '' ? <p>Created date: {annoucment.publicationDate}</p> : <p>Modyfication date: {annoucment.modyficationDate}</p>}

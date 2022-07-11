@@ -43,7 +43,7 @@ const Component = () => {
           
           {(userRights === 'admin' || userRights === 'user')?
             <Card.Footer className='text-center'>
-              <a href={'/postedit/' + annoucment.id}><Button variant='dark'>Edit</Button></a>
+              <a href={'/postedit/' + annoucment._id}><Button variant='dark'>Edit</Button></a>
             </Card.Footer>:''
           }
             

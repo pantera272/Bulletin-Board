@@ -4,5 +4,5 @@ export const getCurrentDate = () => {
   const month = date.getMonth();
   const year = date.getFullYear();
 
-  return day + '-' + (month + 1) + '-' + year ;
+  return year + '-' + (month + 1) + '-' + day ;
 };

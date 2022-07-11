@@ -1,11 +1,8 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
 
 import { createMuiTheme, StylesProvider, ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-
-import { store } from './redux/store';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import Homepage from '../src/components/views/Homepage/Homepage';
@@ -14,6 +11,9 @@ import { PostEdit } from './components/views/PostEdit/PostEdit';
 import { PostAdd } from './components/views/PostAdd/PostAdd';
 import { NotFound } from './components/views/NotFound/NotFound';
 import ShowUserAnnoucments from './components/features/ShowUsersAnnoucments/ShowUserAnnoucments';
+import { useDispatch } from 'react-redux';
+import { fetchStart } from './redux/annoucmentsReducer';
+import { useEffect } from 'react';
 
 const theme = createMuiTheme({
   palette: {
@@ -21,9 +21,13 @@ const theme = createMuiTheme({
   },
 });
 
-const App = () => (
-  <BrowserRouter>
-    <Provider store={store}>
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(fetchStart()), [dispatch]);
+
+  return (
+    <BrowserRouter>
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -40,8 +44,8 @@ const App = () => (
           </MainLayout>
         </ThemeProvider>
       </StylesProvider>
-    </Provider>
-  </BrowserRouter>
-);
+    </BrowserRouter>
+  );
+};
 
 export { App };
